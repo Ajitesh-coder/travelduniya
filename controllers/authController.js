@@ -44,7 +44,7 @@ export const login = async(req,res)=>{
            const {password, role , ...rest} = user._doc
 
            // create jwt token
-           const token = jwt.sign({id:user._id, role:user.role },process.env.JWT_SECRET_KEY, { expiresIn:'15d' })
+           const token = jwt.sign({id:user._id, role:user.role },process.env.JWT_SECRET_KEY, { expiresIn:"15d" })
     // set token in the browser cookies and send the response to the client
     res.cookie('accessToken',token,{
         httpOnly:true,
@@ -53,7 +53,7 @@ export const login = async(req,res)=>{
     .status(200)
     .json({
         token,
-        data: {...rest },
+        data: { ...rest },
         role,
     });
 
