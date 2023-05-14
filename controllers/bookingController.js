@@ -13,7 +13,7 @@ res.status(200)
 })
     }
     catch(err){
-        res.status(500).json({success:true,message:"internal server error"});
+        res.status(500).json({success:true,message:"Please fill all the required details"});
     }
 }
 
